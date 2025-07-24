@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i> Wanderlust</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings"><i class="fa-solid fa-globe"></i> Explore</a>
+        <!-- Filter Options -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="priceFilter" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-dollar-sign"></i> Price
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="priceFilter">
+            <li><a class="dropdown-item" href="/listings?price=0-500">0 - 500</a></li>
+            <li><a class="dropdown-item" href="/listings?price=500-1000">500 - 1000</a></li>
+            <li><a class="dropdown-item" href="/listings?price=1000-2000">1000 - 2000</a></li>
+            <li><a class="dropdown-item" href="/listings?price=2000+">2000+</a></li>
+          </ul>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="locationFilter" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-map-marker-alt"></i> Location
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="locationFilter">
+            <li><a class="dropdown-item" href="/listings?location=New%20York">New York</a></li>
+            <li><a class="dropdown-item" href="/listings?location=San%20Francisco">San Francisco</a></li>
+            <li><a class="dropdown-item" href="/listings?location=Los%20Angeles">Los Angeles</a></li>
+            <li><a class="dropdown-item" href="/listings?location=Chicago">Chicago</a></li>
+          </ul>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="typeFilter" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-building"></i> Type
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="typeFilter">
+            <li><a class="dropdown-item" href="/listings?type=Apartment">Apartment</a></li>
+            <li><a class="dropdown-item" href="/listings?type=House">House</a></li>
+            <li><a class="dropdown-item" href="/listings?type=Condo">Condo</a></li>
+            <li><a class="dropdown-item" href="/listings?type=Villa">Villa</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new"><i class="fa-solid fa-home"></i> Add home</a>
+        <% if (!currUser) { %>
+          <a class="nav-link active" href="/signup"><i class="fa-solid fa-user-plus"></i> <b>Sign up</b></a>
+          <a class="nav-link" href="/login"><i class="fa-solid fa-sign-in-alt"></i> <b>Log in</b></a>
+        <% } %>
+        <% if (currUser) { %>
+          <a class="nav-link" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
+          <a class="nav-link" href="/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+          <a class="nav-link" href="/logout"><i class="fa-solid fa-sign-out-alt"></i> <b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
